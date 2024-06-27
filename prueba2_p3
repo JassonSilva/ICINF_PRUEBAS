@@ -1,0 +1,24 @@
+def main():
+    capitales = []
+    paises = []
+
+    print("Ingrese 5 capitales y sus respectivos países:")
+    for _ in range(5):
+        capital = input("Ingrese el nombre de la capital: ")
+        pais = input(f"Ingrese el país correspondiente a {capital}: ")
+        capitales.append(capital)
+        paises.append(pais)
+
+    nombre_turista = input("\nIngrese el nombre del turista: ")
+    capital_procedencia = input("Ingrese la capital de procedencia del turista: ")
+
+    if capital_procedencia in capitales:
+        indice = capitales.index(capital_procedencia)
+        pais_procedencia = paises[indice]
+        mensaje = f"El turista con el nombre {nombre_turista} viene de la capital {capital_procedencia} y su país es {pais_procedencia}."
+        print(mensaje)
+    else:
+        print(f"No se encontró la capital {capital_procedencia} en la lista ingresada.")
+
+if __name__ == "__main__":
+    main()

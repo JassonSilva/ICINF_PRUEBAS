@@ -1,0 +1,22 @@
+def main():
+    notas = []
+    
+    print("Ingrese la nota (para finalizar ingrese el 0).")
+    while True:
+        nota = float(input("Ingrese la nota (para finalizar ingrese el 0. "))
+        if nota == 0:
+            break
+        notas.append(nota)
+    
+    cantidad_notas = len(notas)
+    promedio_notas = sum(notas) / cantidad_notas if cantidad_notas > 0 else 0
+    notas_bajo_4 = sum(1 for nota in notas if nota < 4.0)
+    notas_igual_o_mayor_4 = sum(1 for nota in notas if nota >= 4.0)
+    
+    print(f"1) Cantidad de notas: {cantidad_notas}")
+    print(f"2) Promedio de notas: {promedio_notas:.2f}")
+    print(f"3) Número de notas bajo 4.0: {notas_bajo_4}")
+    print(f"4) Número de notas igual o mayor que 4.0: {notas_igual_o_mayor_4}")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,27 @@
+def main():
+    tipo_cambio = 950
+    precios_clp = []
+    
+    print("ingrese el precio de 10 productos chilenos (sin puntos):")
+    for i in range(10):
+        while True:
+            try:
+                precio_clp = float(input(f"Ingrese el precio {i+1}: "))
+                if precio_clp < 0:
+                    raise ValueError("El precio no puede ser negativo.")
+                precios_clp.append(precio_clp)
+                break
+            except ValueError as e:
+                print(f"Error: {e}")
+    
+    precios_usd = []
+    for precio in precios_clp:
+        precio_usd = precio / tipo_cambio
+        precios_usd.append(precio_usd)
+    
+    print("\nPrecios en dólares (USD):")
+    for i, precio_usd in enumerate(precios_usd):
+        print(f"Precio {i+1}: ${precio_usd:.2f} USD")
+
+if __name__ == "__main__":
+    main()
